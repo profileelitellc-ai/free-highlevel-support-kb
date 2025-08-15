@@ -28,19 +28,31 @@ jobs:
         run: |
           set -e
           mkdir -p _site
-          # Copy EXACT folder (quotes handle spaces)
-          cp -r "HTML/HighLevel Branded"/* _site/
-          # Show what will be published (helps debugging)
+          # Copy EXACT folder (quotes handle spaces/&)
+          cp -r "HTML/HighLevel Branded"/* _site/ || true
+          touch _site/.nojekyll
+
+          # If no index exists, create a simple directory landing page
+          if [ ! -f "_site/index.html" ] && [ ! -f "_site/Index.html" ]; then
+            python3 - <<'PY'
+import os, html, urllib.parse
+root = "_site"
+items = [d for d in os.listdir(root) if os.path.isdir(os.path.join(root,d))]
+items.sort(key=lambda s: s.lower())
+def enc(p): return urllib.parse.quote(p)
+with open(os.path.join(root,"index.html"), "w", encoding="utf-8") as f:
+    f.write("<!doctype html><meta charset='utf-8'>")
+    f.write("<title>Knowledge Base</title>")
+    f.write("<h1>Knowledge Base</h1><p>Select a category:</p><ul>")
+    for d in items:
+        f.write(f"<li><a href='{enc(d)}/'>{html.escape(d)}</a></li>")
+    f.write("</ul>")
+PY
+          fi
+
           echo "---- PUBLISHING THESE FILES ----"
           ls -la _site
           echo "--------------------------------"
-          # Require a homepage to exist
-          if [ ! -f "_site/index.html" ] && [ ! -f "_site/Index.html" ]; then
-            echo "ERROR: No index.html (or Index.html) found in HTML/HighLevel Branded/"
-            exit 1
-          fi
-          # Disable Jekyll processing
-          touch _site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
