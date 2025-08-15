@@ -1,5 +1,35 @@
 <!doctype html>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=HTML/HighLevel%20Branded/index.html">
-<title>Redirecting…</title>
-<a href="HTML/HighLevel%20Branded/index.html">Click here if you are not redirected.</a>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Loading Knowledge Base…</title>
+  <style>body{font:16px system-ui, -apple-system, Segoe UI, Roboto, sans-serif;padding:24px}</style>
+</head>
+<body>
+  <p>Loading the Knowledge Base…</p>
+  <script>
+    // Add/adjust candidates if your folder names differ.
+    const candidates = [
+      "HTML/HighLevel%20Branded/index.html",
+      "HTML/HighLevel%20Branded/Index.html",
+      "HTML/highlevel%20branded/index.html",
+      "HTML/HighLevel Branded/index.html".replace(/ /g,"%20"),
+      "HTML/index.html",
+      "index.htm"
+    ];
+    (async () => {
+      for (const path of candidates) {
+        try {
+          const res = await fetch(path, {method:"HEAD", cache:"no-store"});
+          if (res.ok) { location.href = path; return; }
+        } catch(e) {}
+      }
+      document.body.innerHTML = `<h1>We couldn't find your KB entry file.</h1>
+      <p>Check which folder under <code>HTML/</code> contains <code>index.html</code>, then edit the redirect list in <code>index.html</code> to match the exact name (including capitals and spaces).</p>`;
+    })();
+  </script>
+  <noscript>
+    If this page doesn't redirect, enable JavaScript and refresh.
+  </noscript>
+</body>
+</html>
