@@ -1,4 +1,4 @@
-name: Publish KB to gh-pages
+name: Publish KB to gh-pages (with HTML sitemap)
 
 on:
   push:
@@ -19,24 +19,75 @@ jobs:
         run: |
           set -e
           mkdir -p _site
+          # Copy your KB folder (quotes handle spaces & special chars)
           cp -r "HTML/HighLevel Branded"/* _site/ || true
-          # Stop Jekyll from processing
+          # Ensure Jekyll doesn't process files
           touch _site/.nojekyll
 
-          # If no index exists, create a simple landing page with links
-          if [ ! -f "_site/index.html" ] && [ ! -f "_site/Index.html" ]; then
-            echo '<!doctype html><meta charset="utf-8"><title>Knowledge Base</title><h1>Knowledge Base</h1><p>Select a category:</p><ul>' > _site/index.html
-            # List top-level folders and make links (URL-encode names via python one-liner)
-            for d in $(find _site -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort); do
-              enc=$(python3 -c "import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))" "$d")
-              echo "<li><a href=\"${enc}/\">${d}</a></li>" >> _site/index.html
-            done
-            echo '</ul>' >> _site/index.html
-          fi
+      - name: Generate sitemap.html, index.html (if missing), and robots.txt
+        run: |
+          python3 - << 'PY'
+          import os, html, urllib.parse, datetime, pathlib
 
-          echo "---- PUBLISHING THESE FILES ----"
-          ls -la _site
-          echo "--------------------------------"
+          BASE = "https://profileelitellc-ai.github.io/free-highlevel-support-kb/"
+          ROOT = "_site"
+
+          def url_for(rel_path):
+              # Convert local path to URL (URL-encode each segment)
+              parts = rel_path.split(os.sep)
+              return BASE + "/".join(urllib.parse.quote(p) for p in parts)
+
+          # 1) Collect every .html (except sitemap.html we generate)
+          entries = []
+          for dirpath, _, files in os.walk(ROOT):
+              for fn in files:
+                  if fn.lower().endswith(".html"):
+                      rel = os.path.relpath(os.path.join(dirpath, fn), ROOT)
+                      if rel.lower() == "sitemap.html":
+                          continue
+                      entries.append(rel)
+          entries = sorted(entries, key=lambda s: s.lower())
+
+          # 2) Write sitemap.html (human-friendly HTML list of all pages)
+          sitemap_html = ["<!doctype html>",
+                          "<meta charset='utf-8'>",
+                          "<title>Knowledge Base Sitemap</title>",
+                          "<h1>Knowledge Base Sitemap</h1>",
+                          "<p>This page lists every article for easy crawling.</p>",
+                          "<ul>"]
+          for rel in entries:
+              url = url_for(rel)
+              label = html.escape(rel)
+              sitemap_html.append(f"<li><a href='{url}'>{label}</a></li>")
+          sitemap_html.append("</ul>")
+          pathlib.Path(ROOT, "sitemap.html").write_text("\n".join(sitemap_html), encoding="utf-8")
+
+          # 3) If there's no index.html, create a simple landing that links to top-level folders + sitemap
+          has_index = any(os.path.isfile(os.path.join(ROOT, n)) for n in ("index.html","Index.html"))
+          if not has_index:
+              # List immediate subfolders in ROOT
+              cats = [d for d in os.listdir(ROOT) if os.path.isdir(os.path.join(ROOT, d))]
+              cats.sort(key=lambda s: s.lower())
+              idx = ["<!doctype html>",
+                     "<meta charset='utf-8'>",
+                     "<title>Knowledge Base</title>",
+                     "<h1>Knowledge Base</h1>",
+                     "<p>Select a category, or open the full <a href='sitemap.html'>sitemap</a>.</p>",
+                     "<ul>"]
+              for d in cats:
+                  idx.append(f"<li><a href='{urllib.parse.quote(d)}/'>{html.escape(d)}</a></li>")
+              idx.append("</ul>")
+              pathlib.Path(ROOT, "index.html").write_text("\n".join(idx), encoding="utf-8")
+
+          # 4) robots.txt to advertise the sitemap
+          robots = [ "User-agent: *",
+                     "Allow: /",
+                     f"Sitemap: {BASE}sitemap.html" ]
+          pathlib.Path(ROOT, "robots.txt").write_text("\n".join(robots), encoding="utf-8")
+
+          # 5) Log summary
+          print(f"Generated sitemap with {len(entries)} HTML pages at {datetime.datetime.utcnow().isoformat()}Z")
+          PY
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
