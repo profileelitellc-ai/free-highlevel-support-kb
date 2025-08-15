@@ -1,0 +1,49 @@
+name: Publish KB to gh-pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      # Prepare the site from your KB folder
+      - name: Build _site from HTML/HighLevel Branded
+        run: |
+          set -e
+          mkdir -p _site
+          cp -r "HTML/HighLevel Branded"/* _site/ || true
+          # If no index exists, create a simple landing page with links
+          if [ ! -f "_site/index.html" ] && [ ! -f "_site/Index.html" ]; then
+            python3 - <<'PY'
+import os, html, urllib.parse
+root = "_site"
+items = [d for d in os.listdir(root) if os.path.isdir(os.path.join(root,d))]
+items.sort(key=lambda s: s.lower())
+with open(os.path.join(root,"index.html"), "w", encoding="utf-8") as f:
+    f.write("<!doctype html><meta charset='utf-8'><title>Knowledge Base</title>")
+    f.write("<h1>Knowledge Base</h1><p>Select a category:</p><ul>")
+    for d in items:
+        f.write(f"<li><a href='{urllib.parse.quote(d)}/'>{html.escape(d)}</a></li>")
+    f.write("</ul>")
+PY
+          fi
+          # Stop Jekyll from processing
+          touch _site/.nojekyll
+
+      # Publish the _site folder to the gh-pages branch (root)
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: _site
+          force_orphan: true
