@@ -1,4 +1,4 @@
-name: Deploy KB (HTML/HighLevel Branded) to GitHub Pages
+name: Build & Deploy KB to GitHub Pages
 
 on:
   push:
@@ -21,11 +21,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare static site artifact
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare static site
         run: |
+          set -e
           mkdir -p _site
+          # Copy EXACT folder (quotes handle spaces)
           cp -r "HTML/HighLevel Branded"/* _site/
-          # Make sure Jekyll doesn't try to process it
+          # Show what will be published (helps debugging)
+          echo "---- PUBLISHING THESE FILES ----"
+          ls -la _site
+          echo "--------------------------------"
+          # Require a homepage to exist
+          if [ ! -f "_site/index.html" ] && [ ! -f "_site/Index.html" ]; then
+            echo "ERROR: No index.html (or Index.html) found in HTML/HighLevel Branded/"
+            exit 1
+          fi
+          # Disable Jekyll processing
           touch _site/.nojekyll
 
       - name: Upload artifact
