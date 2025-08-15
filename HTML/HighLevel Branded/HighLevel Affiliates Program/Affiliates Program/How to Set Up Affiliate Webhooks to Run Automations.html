@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>How to Set Up Affiliate Webhooks to Run Automations</title>
+  
+  <!-- Standard Meta Tags -->
+  <meta name="title" content="How to Set Up Affiliate Webhooks to Run Automations">
+  <meta name="description" content=" In this article, we will cover how to set up webhooks for your affiliate links so that you can run automation off sales when someone signs up using your affiliate link.        NOTE:   This Article is for the HighLevel Affiliate Program, NOT Affil...">
+  <meta name="keywords" content="affiliate tracking,  new lead,  new commission,  affiliate webhooks,  affiliate automation,  affiliate zapier,  affiliate sales">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="How to Set Up Affiliate Webhooks to Run Automations">
+  <meta property="og:description" content=" In this article, we will cover how to set up webhooks for your affiliate links so that you can run automation off sales when someone signs up using your affiliate link.        NOTE:   This Article is for the HighLevel Affiliate Program, NOT Affil...">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://help.gohighlevel.com/support/solutions/articles/48001163126-how-to-set-up-affiliate-program-webhooks-to-run-automations-first-promoter-">
+</head>
+<body>
+  <div class="date_updated">
+    <p><strong>Date Updated:</strong> 2024-09-10T00:07:54.000Z</p>
+  </div>
+  <div class="container">
+    <p class="tdfocus-1665682243618" data-identifyelement="564" dir="ltr">In this article, we will cover how to set up webhooks for your affiliate links so that you can run automation off sales when someone signs up using your affiliate link.</p><p class="tdfocus-1665682243618" data-identifyelement="564" dir="ltr"><br></p><p class="tdfocus-1665682243618" data-identifyelement="564" dir="ltr"><br></p><p class="tdfocus-1665682243618" data-identifyelement="564" dir="ltr"><strong data-identifyelement="503" dir="ltr">NOTE:&nbsp;</strong></p><pre class="fd-callout fd-callout--note" data-identifyelement="490" dir="ltr">This Article is for the <u data-identifyelement="491" dir="ltr"><a data-identifyelement="517" dir="ltr" href="https://help.gohighlevel.com/support/solutions/folders/48000666024" rel="noreferrer" target="_blank">HighLevel Affiliate Program</a>,</u> <strong data-identifyelement="518"><span data-identifyelement="519" style="color: rgb(184, 49, 47);">NOT</span></strong> <a data-identifyelement="494" href="https://help.gohighlevel.com/en/support/solutions/articles/48001223169" rel="noreferrer" target="_blank">Affiliate Manager Feature</a> found in your sub-accounts.
+
+As an affiliate, you can <u>enroll in any HighLevel Plan</u>. If you want to track your referrals for HighLevel<strong dir="ltr">&nbsp;Starter</strong> <strong>Plan</strong> ($97/month) or HighLevel <strong dir="ltr">Agency Unlimited</strong> ($297/month) using webhooks, please contact the support team. 
+
+Request to set up your "<strong>HighLevel General Affiliate Campaign</strong>" webhooks, as shown in the video below. 
+
+If you want to <u>track your referrals for HighLevel <strong>Agency Pro </strong>($497/month)</u> with webhooks, request to set up your "<strong>Supercharged <a href="https://www.gohighlevel.com/ssp" rel="noreferrer" target="_blank">SaaS Program</a></strong>" webhooks, which are the same as the ones shown in the video below. 
+
+Please follow the general process outlined below. Also, inform the support team if you want the webhooks you submitted to apply to referrals for the Supercharged SaaS Program ($497/month).</pre><p data-identifyelement="510"><br data-identifyelement="511"></p><div class="fr-draggable" data-identifyelement="512" style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0526b6bfc9d7498cb0327f6704859a53?sid=3a6e8ea5-8532-43e3-99d8-cb2c0c21371f" frameborder="0" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" sandbox="allow-scripts allow-forms allow-same-origin allow-presentation" data-identifyelement="513"></iframe></div><p data-identifyelement="568" dir="ltr"><br data-identifyelement="514"></p><h4 data-identifyelement="568" dir="ltr"><strong data-identifyelement="515">M</strong><strong data-identifyelement="516">entioned Documentation:</strong></h4><p data-identifyelement="568" dir="ltr"><a data-identifyelement="517" href="https://help.gohighlevel.com/en/support/solutions/articles/48001237383" rel="noreferrer" target="_blank">How to use the Inbound Webhook Workflow Premium Trigger?</a></p><p data-identifyelement="568" dir="ltr"><a data-identifyelement="518" href="https://help.gohighlevel.com/en/support/solutions/articles/48001231559" rel="noreferrer" target="_blank">How to enable and rebill LC Premium Triggers &amp; Actions for Workflows</a></p><p data-identifyelement="568" dir="ltr">You can sign up for Postman for free by <a data-identifyelement="519" href="https://www.postman.com/" rel="noreferrer" target="_blank">clicking on this link:</a></p><p data-identifyelement="525" dir="ltr"><br data-identifyelement="520"></p><pre class="fd-callout fd-callout--idea" data-identifyelement="521" dir="ltr">Once you have setup and tested all 5 steps, add the corresponding Webhooks for each, then copy and paste this into a seperate doc to be shared with <a data-identifyelement="522" href="https://help.gohighlevel.com/en/support/solutions/articles/48001204857" rel="noreferrer" target="_blank">support</a> (See example below). <br data-identifyelement="523"><br data-identifyelement="524"><strong data-identifyelement="525" dir="ltr"><u data-identifyelement="526">Example of what to</u></strong><strong data-identifyelement="527" dir="ltr"><u data-identifyelement="528" dir="ltr">&nbsp;send to support:</u></strong><br data-identifyelement="529"><br data-identifyelement="530">I would like webhooks activated for my affiliate link: [Insert Affiliate Link]<br data-identifyelement="531"><br data-identifyelement="532"><strong data-identifyelement="533" dir="ltr">Step 1:</strong> lead_subscribed on –&nbsp;[Insert inbound Webhook URL]<br data-identifyelement="534"><strong data-identifyelement="535">Step 2:</strong> lead_signup on –&nbsp;[Insert inbound Webhook URL]<br data-identifyelement="536"><strong data-identifyelement="537">Step 3:</strong> lead_becomes_referral on –&nbsp;[Insert inbound Webhook URL]<br data-identifyelement="538"><strong data-identifyelement="539">Step 4:</strong> reward_created on –&nbsp;[Insert inbound Webhook URL]<br data-identifyelement="540"><strong data-identifyelement="541">Step 5:</strong> lead_cancelled on –&nbsp;[Insert inbound Webhook URL]<br data-identifyelement="542">___</pre><p data-identifyelement="543"><br data-identifyelement="544"></p><h2 data-identifyelement="525" dir="ltr"><br data-identifyelement="545">Paste this webhook sample into <a data-identifyelement="546" dir="ltr" href="https://www.postman.com/">Postman:</a></h2><div data-identifyelement="547"><div class="code-toolbar"><pre contenteditable="false" data-code-brush="Html" data-identifyelement="548" rel="highlighter" style="margin-left: 40px;" class="language-html line-numbers" tabindex="0"><code class="language-html">{
+    "event": {
+        "id": null,
+        "type": "",
+        "created_at": ""
+    },
+    "data": {
+        "id": null,
+        "state": "",
+        "email": "",
+        "uid": null,
+        "customer_since": null,
+        "cancelled_at": null,
+        "plan_name": null,
+        "suspicion": "",
+        "username": null,
+        "website": null,
+        "created_at": "",
+        "split_promotion_id": null,
+        "custom_fields": {
+            "name": "",
+            "company_name": "",
+            "phone_number": ""
+        },
+        "split_percentage_value": null,
+        "promotion": {
+            "id": null,
+            "status": "",
+            "ref_id": "",
+            "promo_code": null,
+            "customer_promo_code": null,
+            "target_reached_at": null,
+            "promoter_id": null,
+            "campaign_id": null,
+            "referral_link": "",
+            "current_offer": null,
+            "current_referral_reward": null,
+            "current_promotion_reward": null,
+            "current_target_reward": null,
+            "campaign_name": "HighLevel Affiliate Program",
+            "hidden": false,
+            "visitors_count": null,
+            "leads_count": null,
+            "customers_count": null,
+            "refunds_count": null,
+            "cancellations_count": null,
+            "sales_count": null,
+            "sales_total": null,
+            "refunds_total": null,
+            "active_customers_count": null
+        },
+        "promoter": {
+            "id": null,
+            "cust_id": "",
+            "email": "",
+            "created_at": "",
+            "temp_password": "",
+            "default_promotion_id": null,
+            "pref": "",
+            "default_ref_id": "",
+            "note": null,
+            "w8_form_url": null,
+            "w9_form_url": null,
+            "parent_promoter_id": null,
+            "earnings_balance": {
+                "cash": null
+            },
+            "current_balance": {
+                "cash": null
+            },
+            "paid_balance": null,
+            "auth_token": "",
+            "profile": {
+                "id": null,
+                "first_name": "",
+                "last_name": "",
+                "website": "",
+                "company_name": "",
+                "phone_number": "",
+                "address": "",
+                "vat_id": "",
+                "country": "US",
+                "paypal_email": "",
+                "avatar_url": "",
+                "description": null,
+                "social_accounts": {
+                    "twitter": {
+                        "url": ""
+                    },
+                    "youtube": {
+                        "url": ""
+                    },
+                    "facebook": {
+                        "url": ""
+                    },
+                    "linkedin": {
+                        "url": ""
+                    },
+                    "instagram": {
+                        "url": ""
+                    }
+                }
+            },
+            "promotions": [
+                {
+                    "id": null,
+                    "status": "offer_inactive",
+                    "ref_id": "",
+                    "promo_code": null,
+                    "customer_promo_code": null,
+                    "target_reached_at": null,
+                    "promoter_id": null,
+                    "campaign_id": null,
+                    "referral_link": "",
+                    "current_offer": null,
+                    "current_referral_reward": null,
+                    "current_promotion_reward": null,
+                    "current_target_reward": null,
+                    "campaign_name": "HighLevel Affiliate Program",
+                    "hidden": false,
+                    "visitors_count": null,
+                    "leads_count": null,
+                    "customers_count": null,
+                    "refunds_count": null,
+                    "cancellations_count": null,
+                    "sales_count": null,
+                    "sales_total": null,
+                    "refunds_total": null,
+                    "active_customers_count": null
+                },
+                {
+                    "id": null,
+                    "status": "offer_inactive",
+                    "ref_id": "",
+                    "promo_code": null,
+                    "customer_promo_code": null,
+                    "target_reached_at": null,
+                    "promoter_id": null,
+                    "campaign_id": null,
+                    "referral_link": "",
+                    "current_offer": null,
+                    "current_referral_reward": null,
+                    "current_promotion_reward": null,
+                    "current_target_reward": null,
+                    "campaign_name": "Supercharged SaaS Program",
+                    "hidden": false,
+                    "visitors_count": 0,
+                    "leads_count": 0,
+                    "customers_count": 0,
+                    "refunds_count": 0,
+                    "cancellations_count": 0,
+                    "sales_count": 0,
+                    "sales_total": 0,
+                    "refunds_total": 0,
+                    "active_customers_count": 0
+                }
+            ]
+        }
+    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><span>HTML</span></div></div></div><p data-identifyelement="707"><br data-identifyelement="708"></p><p data-identifyelement="709"><br data-identifyelement="710"></p><p data-identifyelement="711"><br data-identifyelement="712"></p></div><hr data-identifyelement="527"><h1 data-identifyelement="573" dir="ltr"><strong data-identifyelement="713" dir="ltr">Step-by-step guide on setting up affiliate program webhooks.</strong></h1><p data-identifyelement="573" dir="ltr" style="margin-left: 20px;"><br data-identifyelement="574">The Webhooks that we have on FirstPromoter are as follows:</p><ul data-identifyelement="575"><li data-identifyelement="576" dir="ltr" style="margin-left: 20px;">Lead Subscribed - Step one of the two-step sign-up form (if you want to nurture leads that have not signed up for a trial)</li><li data-identifyelement="577" dir="ltr" style="margin-left: 20px;">Lead Signup - &nbsp;Step two of the two-step Sign up form (Nurture leads that started a trial)</li><li class="tdfocus-1665682332399" data-identifyelement="578" dir="ltr" style="margin-left: 20px;">Lead Converted to Customer (they made their first payment)</li><li data-identifyelement="579" dir="ltr" style="margin-left: 20px;">Reward Generated (Anytime they make a qualifying payment)</li><li data-identifyelement="580" dir="ltr" style="margin-left: 20px;">Lead Canceled (<span data-identifyelement="581" dir="ltr" style="color: rgb(0, 0, 0); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 13px; font-weight: 400; text-align: left; text-indent: 0px; display: inline !important;">lead or customer has no more active subscriptions on their account</span>)</li></ul><p class="tdfocus-1665682328971" data-identifyelement="582" dir="ltr" style="margin-left: 20px;"><br data-identifyelement="586"><br data-identifyelement="587"></p><h3 class="tdfocus-1665683246048" data-identifyelement="588" dir="ltr" style="margin-left: 20px;"><strong data-identifyelement="714" dir="ltr">1. Head into your Sub-account &gt; Click on the Automation tab &gt; Create New Workflow</strong></h3><p class="tdfocus-1665683246048" data-identifyelement="588" dir="ltr" style="margin-left: 40px;">Proceed to create your first Workflow: "<strong data-identifyelement="715">Step 1:</strong> lead_subscribed on."</p><p class="tdfocus-1665683246048" data-identifyelement="588" dir="ltr" style="margin-left: 40px;"><br data-identifyelement="530">This will be the webhook that fires whenever someone fills out Step one of the two-step sign-up form (if you want to nurture leads that have not signed up for a trial)</p><p class="tdfocus-1665683246048" data-identifyelement="588" dir="ltr" style="margin-left: 40px;"><br data-identifyelement="716"></p><p data-identifyelement="593" dir="ltr" style="margin-left: 20px;"><br data-identifyelement="594"></p><h3 data-identifyelement="595" dir="ltr" style="margin-left: 20px;">2. <strong data-identifyelement="717" dir="ltr">Create an inbound webhook trigger &gt; Copy the inbound webhook URL string</strong></h3><p class="tdfocus-1666105692674" data-identifyelement="600" style="margin-left: 20px;"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155005472156/original/D8K4WoHieDpsboJJ6NiauGwe2UxCeiyF6A.gif?1692302700" style="width: 597px; display: block; float: none; vertical-align: top; margin: 5px auto; text-align: center;" class="fr-dib fw-lightbox-img" data-attachment="[object Object]" data-id="155005472156" data-identifyelement="718" data-index="0"></p><p class="tdfocus-1666105692674" data-identifyelement="600" style="margin-left: 20px;"><br data-identifyelement="719"></p><p class="tdfocus-1666105692674" data-identifyelement="600" style="margin-left: 20px;"><br data-identifyelement="720"></p><p class="tdfocus-1666105692674" data-identifyelement="600" dir="ltr" style="margin-left: 20px;"><br data-identifyelement="721"></p><h3 data-identifyelement="602" dir="ltr" style="margin-left: 20px;">3. Open up <a data-identifyelement="722" dir="ltr" href="https://www.postman.com/" style="box-sizing: border-box; color: rgb(44, 92, 197); user-select: auto;">Postman</a> and follow the steps below:</h3><ol data-identifyelement="723"><li class="tdfocus-1665682673815" data-identifyelement="609" dir="ltr" style="margin-left: 20px;">Use HTTP Request Method</li><li class="tdfocus-1665682673815" data-identifyelement="609" dir="ltr" style="margin-left: 20px;">Select "Post"</li><li class="tdfocus-1665682673815" data-identifyelement="609" dir="ltr" style="margin-left: 20px;">Paste the webhook URL (The one you copied from the workflow in the step above)&nbsp;</li><li class="tdfocus-1665682673815" data-identifyelement="609" dir="ltr" style="margin-left: 20px;">Select "<strong data-identifyelement="724">Body</strong>" then "<strong data-identifyelement="725">Raw</strong>" &amp; select "<strong data-identifyelement="726" dir="ltr">JSON"</strong> as the text file</li><li class="tdfocus-1665682673815" data-identifyelement="609" dir="ltr" style="margin-left: 20px;">Copy the First Promoter Sample data given above into the Body (should be blue)</li><li class="tdfocus-1665682673815" data-identifyelement="609" dir="ltr" style="margin-left: 20px;">Hit "Send"</li><li class="tdfocus-1665682673815" data-identifyelement="609" dir="ltr" style="margin-left: 20px;">Please ensure that you receive a successful response, or kindly begin from the beginning.<a class="tdfocus-1666105696568" data-identifyelement="610" dir="ltr" href="https://help.gohighlevel.com/support/solutions/articles/48001204857-ways-to-get-highlevel-support-24-" rel="noopener noreferrer" target="_blank"></a><br data-identifyelement="727"><a class="tdfocus-1666105696568" data-identifyelement="610" dir="ltr" href="https://help.gohighlevel.com/support/solutions/articles/48001204857-ways-to-get-highlevel-support-24-" rel="noopener noreferrer" target="_blank"></a></li></ol><p data-identifyelement="728"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155005472107/original/fehetlVYShwoPGCqVMrbGJvw4IdADgr2ew.gif?1692302530" style="width: 602px; display: block; float: none; vertical-align: top; margin: 5px auto; text-align: center;" class="fr-dib fw-lightbox-img" data-attachment="[object Object]" data-id="155005472107" data-identifyelement="729" data-index="1"></p><p data-identifyelement="730"><br data-identifyelement="731"></p><p data-identifyelement="732"><br data-identifyelement="733"></p><h3 data-identifyelement="734" dir="ltr" style="margin-left: 20px;">4. Return to your Workflow and hit the "<strong data-identifyelement="735">fetch sample</strong>" button within the trigger.</h3><p data-identifyelement="736" dir="ltr" style="margin-left: 40px;">Grab and select the sample, then proceed to map out the action fields:</p><p data-identifyelement="737"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155005471669/original/mXv0wktff8D09tbw0WMec1lBCSOw4JiPkQ.gif?1692301604" style="width: 606px; display: block; float: none; vertical-align: top; margin: 5px auto; text-align: center;" class="fr-dib fw-lightbox-img" data-attachment="[object Object]" data-id="155005471669" data-identifyelement="738" data-index="2"></p><p data-identifyelement="739"><br data-identifyelement="740"></p><p data-identifyelement="741" dir="ltr"><br data-identifyelement="742"></p><h3 data-identifyelement="743" dir="ltr" style="margin-left: 20px;">5. Map out the fields using the data from the inbound webhook</h3><ul data-identifyelement="744"><li data-identifyelement="745" dir="ltr">Full name</li><li data-identifyelement="746" dir="ltr">Email</li><li data-identifyelement="747" dir="ltr">Phone</li></ul><p data-identifyelement="748"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155005471714/original/UnO476vTu9l0HV4IIy5LhnN4Ad9bZaJbNg.png?1692301737" style="width: 594px; display: block; float: none; vertical-align: top; margin: 5px auto; text-align: center;" class="fr-dib fw-lightbox-img" data-attachment="[object Object]" data-id="155005471714" data-identifyelement="749" data-index="3"></p><p data-identifyelement="750"><br data-identifyelement="751"></p><h3 data-identifyelement="752" dir="ltr">6. Repeat this process four more times for the remaining webhooks</h3><ol data-identifyelement="753"><li data-identifyelement="754" dir="ltr">Clone workflow</li><li data-identifyelement="755" dir="ltr">Open and grab the webhook</li><li data-identifyelement="756" dir="ltr">Head back into Postman</li><li data-identifyelement="757" dir="ltr">Paste Code in Postman, and on the doc, you will be sent to support</li><li data-identifyelement="758" dir="ltr">Hit "send" in Postman</li><li data-identifyelement="759" dir="ltr">After success request, jump back into your workflow</li><li data-identifyelement="760" dir="ltr">Hit "fetch samples" and select the new data</li><li data-identifyelement="761" dir="ltr">Repeat until you have completed all 5 webhooks</li></ol><h3 data-identifyelement="762" dir="ltr"><br>7.&nbsp;Open a live chat with support via the icon in the Agency View of your account</h3><blockquote class="tdfocus-1666105700107" data-identifyelement="614" dir="ltr"><h3 data-identifyelement="613" dir="ltr"><div data-identifyelement="537" dir="ltr" style="margin-left: 40px;">I would like webhooks activated for my affiliate link: [Insert Affiliate Link]</div></h3></blockquote><blockquote class="tdfocus-1666105700107" data-identifyelement="614" dir="ltr"><div data-identifyelement="538" dir="ltr" style="margin-left: 40px;"><strong data-identifyelement="764" dir="ltr">My New Lead webhook is:</strong><br data-identifyelement="765"><strong data-identifyelement="766" dir="ltr">Step 1:</strong> lead_subscribed on – [Insert inbound Webhook URL]<br data-identifyelement="767"><strong data-identifyelement="768">Step 2:</strong> lead_signup on – [Insert inbound Webhook URL]<br data-identifyelement="769"><strong data-identifyelement="770">Step 3:</strong> lead_becomes_referral on – [Insert inbound Webhook URL]<br data-identifyelement="771"><strong data-identifyelement="772">Step 4:</strong> reward_created on – [Insert inbound Webhook URL]<br data-identifyelement="773"><strong data-identifyelement="774">Step 5:</strong> lead_cancelled on – [Insert inbound Webhook URL]</div></blockquote><div data-empty="true" data-identifyelement="569" dir="ltr" style="margin-left: 20px;"><br></div><div data-empty="true" data-identifyelement="577" dir="ltr"><br data-identifyelement="583"><strong>Note:&nbsp;</strong></div><pre class="fd-callout fd-callout--note" data-identifyelement="776" dir="ltr">For the Pro 497 Plan. Webhooks can only be made for<br data-identifyelement="777">- <strong>Lead Converted</strong> to Customer (they made their first payment)<br data-identifyelement="778">- <strong>Reward Generated</strong> (Anytime they make a qualifying payment)<br data-identifyelement="779">- <strong>Lead Canceled</strong> (<span data-identifyelement="581" dir="ltr" style="color: rgb(0, 0, 0); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 13px; font-weight: 400; text-align: left; text-indent: 0px; display: inline !important;">lead or customer has no more active subscriptions on their account</span>)
+- </pre><p data-identifyelement="587" dir="ltr"><br data-identifyelement="588">For Lead sign-up and Lead Subscribed, you only need to create one webhook to catch all HighLevel Plans.</p><p data-identifyelement="780"><br data-identifyelement="781"></p><p data-identifyelement="589"><br data-identifyelement="590"></p>
+            
+
+<script type="text/javascript">
+  const attachment_error_image = (attachment) => {
+    const parentElement = attachment.parentElement;
+    const defaultIcon = `<span class="icon-file-empty"></span><span class="fw-attachment-ext">${attachment.dataset.extension}</span>`;
+    parentElement.innerHTML = defaultIcon;
+  };
+</script>
+  </div>
+</body>
+</html>
