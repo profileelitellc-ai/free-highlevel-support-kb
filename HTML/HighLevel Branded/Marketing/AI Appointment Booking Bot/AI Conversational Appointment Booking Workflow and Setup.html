@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Conversational Appointment Booking Workflow and Setup</title>
+  
+  <!-- Standard Meta Tags -->
+  <meta name="title" content="AI Conversational Appointment Booking Workflow and Setup">
+  <meta name="description" content=" The following is a step-by-step guide on how to set up your own AI Conversational Appointment booking bot within a workflow.      1. Create Workflow  Add a trigger with customer Replied (or any other trigger)                      2. Select the AI...">
+  <meta name="keywords" content="Ai booking bot,  Worklfow booking bot,  Conversational book bot,  AI in workflows,  automated booking bot,  conversational booking bot,  eliza,  eliza booking bot,  eliza bot">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="AI Conversational Appointment Booking Workflow and Setup">
+  <meta property="og:description" content=" The following is a step-by-step guide on how to set up your own AI Conversational Appointment booking bot within a workflow.      1. Create Workflow  Add a trigger with customer Replied (or any other trigger)                      2. Select the AI...">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://help.gohighlevel.com/support/solutions/articles/48001216782-ai-conversational-appointment-booking-workflow-and-setup">
+</head>
+<body>
+  <div class="date_updated">
+    <p><strong>Date Updated:</strong> 2022-06-22T02:08:45.000Z</p>
+  </div>
+  <div class="container">
+    <h3 dir="ltr" id="The-following-is-a-step-by-step-guide-on-how-to-set-up-your-own-AI-Conversational-Appointment-booking-bot-within-a-workflow.">The following is a step-by-step guide on how to set up your own AI Conversational Appointment booking bot within a workflow.</h3><p class="fd-toc"><br></p><hr><h2 id="1.-Create-Workflow">1. Create Workflow</h2><p dir="ltr">Add a trigger with customer Replied (or any other trigger)</p><p dir="ltr"><br></p><p><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48232359047/original/9_O9O-lOgVZzMFPEhKvgEiajAtnaS18yhw.png?1655208406" width="600" alt="Create Workflow" class="fr-fic fr-dii fw-lightbox-img" data-attachment="[object Object]" data-id="48232359047" data-index="0"></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h2 dir="ltr" id="2.-Select-the-AI-appointment-bot-in-the-workflow-options">2. Select the AI appointment bot in the workflow options</h2><p dir="ltr">Create action for the appointment bot with the desired calendar<br><br>Set the "Total bot processing duration" -This is how long before the bot will time out if there are no replies from the contact.</p><p dir="ltr"><br></p><p><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48232359049/original/pr8zGFvRVV-AiELuKGmg8rgJOyAzi19VpQ.png?1655208407" width="600" alt="AI appointment bot" class="fr-fic fr-dii fw-lightbox-img" data-attachment="[object Object]" data-id="48232359049" data-index="1"></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h2 dir="ltr" id="3.-The-AI-conversation-will-end-in-one-of-the-three-ways.">3. The AI conversation will end in one of the three ways.</h2><p dir="ltr"><strong dir="ltr">1. The bot successfully books the appointment</strong></p><p dir="ltr"><strong dir="ltr">2. Bot timed out:&nbsp;</strong>The appointment was <u>not</u> booked as the lead didn't respond to the prompts by the bot.</p><p dir="ltr"><strong>3.</strong> <strong>Appointment could not be booked for other reasons,</strong> - no suitable slot, the bot could not understand the query or other technical issues.</p><p dir="ltr"><br></p><p dir="ltr"><br></p><p dir="ltr"><br></p><p dir="ltr"><br></p><h2 dir="ltr" id="4.-Create-a-condition-if-the-bot-booked-an-appointment.&nbsp;">4. Create a condition if the bot booked an appointment.&nbsp;</h2><p><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48232359046/original/hJxKhMj9Kpsm64xjTF7gE24n8eRgzgs72g.png?1655208406" width="600" alt="Create condition if the bot booked an appointment." class="fr-fic fr-dii fw-lightbox-img" data-attachment="[object Object]" data-id="48232359046" data-index="2"></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h2 dir="ltr" id="5.-Create-a-message-or-any-action-for-the-appointment-booked-condition">5. Create a message or any action for the appointment booked condition</h2><p><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48232359048/original/KKvlxmWPb4Du_Qzq0o7_HgVBmsxWMJ2a3A.png?1655208406" width="600" alt="Create message for appointment booked" class="fr-fic fr-dii fw-lightbox-img" data-attachment="[object Object]" data-id="48232359048" data-index="3"></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><h2 dir="ltr" id="6.-Secondary-condition-if-the-appointment-is-not-booked-due-to-bot-timeout&nbsp;">6. Secondary condition if the appointment is not booked due to bot timeout&nbsp;</h2><p dir="ltr">Here we want to know if the appointment was not booked because the bot timed out or for some other reason.&nbsp;</p><p>Common reasons could be that no slots were available or the bot failed to understand the conversation.&nbsp;</p><p><br></p><p><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48232359051/original/WYUwNv5-5grq9Jlo-YUcHXatsZbInn14ig.png?1655208407" width="600" alt="Secondary condition if the appoitment is not booked" class="fr-fic fr-dii fw-lightbox-img" data-attachment="[object Object]" data-id="48232359051" data-index="4"></p><p><br></p><p><br></p><h3 id=""><br></h3><h3 dir="ltr" id="-1"><br></h3><h2 dir="ltr" id="7.-Third-Condition---Appointment-not-booked-for-any-other-reason.">7. Third Condition - Appointment not booked for any other reason.</h2><p dir="ltr">Configure appropriate actions for bot failures for any other reason. If you have Eliza Agent Platform Subscription, you can send the lead over there to continue the lead nurture.&nbsp;</p><p dir="ltr"><br></p><p dir="ltr"><br></p><p><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48232359050/original/lbIxgrDyMUfoe8A8bvOrTM4D7YWvX1h5Mw.png?1655208407" width="600" alt="Human Rollover to Eliza agent platform ( if subscribed)" class="fr-fic fr-dii fw-lightbox-img" data-attachment="[object Object]" data-id="48232359050" data-index="5"></p><p><br></p><p><br></p><p dir="ltr"><a href="https://app.tango.us/app/workflow/b9d308b3-1e9a-44f8-a259-7f23906a05aa?utm_source=magicCopy&amp;utm_medium=magicCopy&amp;utm_campaign=workflow%20export%20links" target="_blank"></a></p><p><br></p>
+            
+
+<script type="text/javascript">
+  const attachment_error_image = (attachment) => {
+    const parentElement = attachment.parentElement;
+    const defaultIcon = `<span class="icon-file-empty"></span><span class="fw-attachment-ext">${attachment.dataset.extension}</span>`;
+    parentElement.innerHTML = defaultIcon;
+  };
+</script>
+  </div>
+</body>
+</html>
