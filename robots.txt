@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://profileelitellc-ai.github.io/free-highlevel-support-kb/sitemap.html
